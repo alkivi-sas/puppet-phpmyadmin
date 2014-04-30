@@ -1,0 +1,28 @@
+phpmyadmin  phpmyadmin/app-password-confirm password <%= @phpmyadmin_password %>
+phpmyadmin  phpmyadmin/database-type    select  mysql
+phpmyadmin  phpmyadmin/db/app-user  string  phpmyadmin
+phpmyadmin  phpmyadmin/db/dbname    string  phpmyadmin
+phpmyadmin  phpmyadmin/dbconfig-install boolean true
+phpmyadmin  phpmyadmin/dbconfig-reinstall   boolean false
+phpmyadmin  phpmyadmin/dbconfig-remove  boolean
+phpmyadmin  phpmyadmin/dbconfig-upgrade boolean true
+phpmyadmin  phpmyadmin/install-error    select  abort
+phpmyadmin  phpmyadmin/internal/reconfiguring   boolean false
+phpmyadmin  phpmyadmin/internal/skip-preseed    boolean false
+phpmyadmin  phpmyadmin/missing-db-package-error select  abort
+phpmyadmin  phpmyadmin/mysql/admin-pass password <%= @admin_password %>
+phpmyadmin  phpmyadmin/mysql/admin-user string  root
+phpmyadmin  phpmyadmin/mysql/app-pass   password <%= @phpmyadmin_password %>
+phpmyadmin  phpmyadmin/mysql/method select  unix socket
+phpmyadmin  phpmyadmin/password-confirm password <%= @phpmyadmin_password %>
+phpmyadmin  phpmyadmin/passwords-do-not-match   error
+phpmyadmin  phpmyadmin/purge    boolean false
+phpmyadmin  phpmyadmin/reconfigure-webserver    multiselect
+phpmyadmin  phpmyadmin/remote/host  select
+phpmyadmin  phpmyadmin/remote/newhost   string
+phpmyadmin  phpmyadmin/remote/port  string
+phpmyadmin  phpmyadmin/remove-error select  abort
+phpmyadmin  phpmyadmin/setup-password   password <%= @phpmyadmin_password %>
+phpmyadmin  phpmyadmin/setup-username   string  admin
+phpmyadmin  phpmyadmin/upgrade-backup   boolean true
+phpmyadmin  phpmyadmin/upgrade-error    select  abort
