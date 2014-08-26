@@ -1,7 +1,7 @@
 class phpmyadmin::install () {
-  mysql::database{ 'phpmyadmin':
-    user    => 'phpmyadmin',
-    require => Class['mysql'],
+  mysql::db { 'phpmyadmin':
+    user     => 'phpmyadmin',
+    password => alkivi_password('phpmyadmin', 'db'),
   }
 
   if ! defined(File['/root/preseed/'])
@@ -25,6 +25,6 @@ class phpmyadmin::install () {
   package { $phpmyadmin::params::phpmyadmin_package_name:
     ensure       => installed,
     responsefile => '/root/preseed/phpmyadmin.preseed',
-    require      => [Mysql::Database['phpmyadmin'], File['/root/preseed/phpmyadmin.preseed'] ],
+    require      => [Mysql::Db['phpmyadmin'], File['/root/preseed/phpmyadmin.preseed'] ],
   }
 }
